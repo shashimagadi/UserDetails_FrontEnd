@@ -1,0 +1,42 @@
+# Node modules (don't need to include them in the Docker image since npm install is done inside the container)
+node_modules
+
+# Logs
+*.log
+
+# npm package lock file (optional, but you might want to generate it inside the container)
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE or Editor settings
+.vscode
+.idea
+*.sublime-workspace
+
+# Docker-specific files
+Dockerfile
+docker-compose.yml
+
+# Build files and temporary files
+dist
+build
+*.tgz
+*.gz
+*.tar
+*.zip
+
+# Environment variable files
+.env
+
+# Test-related files or directories (if you don't need them in the Docker image)
+tests
+test
+coverage
+
+# Other files you might want to ignore based on your project structure
+*.md
