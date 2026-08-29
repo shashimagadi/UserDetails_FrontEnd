@@ -24,6 +24,14 @@ function Sidebar() {
             >
               <FaUserAlt /> UserDetails
             </Link>
+
+              <Link
+              className="nav-link text-white"
+              to="/user-details"
+              style={{ textAlign: "left" }}
+            >
+              <FaUserAlt /> UserDetails
+            </Link>
           </li>
         </ul>
       </div>
