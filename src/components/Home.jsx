@@ -67,6 +67,7 @@ const Home = () => {
   const handleSnackbarClose = () => {
     setSnackbarOpen(false); // Close Snackbar
   };
+console.log("base url ", baseURL);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -137,6 +138,8 @@ const Home = () => {
     }
   };
   return (
+    <>
+   
     <div className="home-container col-md-12">
       <h1 className="home-title">User Details</h1>
       <Snackbar
@@ -209,6 +212,8 @@ const Home = () => {
         </tbody>
       </table>
     </div>
+    </>
+    
   );
 };
 

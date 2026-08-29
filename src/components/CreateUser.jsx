@@ -70,6 +70,7 @@ const CreateUser = () => {
     e.preventDefault();
     try {
       if (editUser) {
+        alert("edit user")
         await axios.put(
           `${baseURL}/api/users/updateUser/${editUser._id}`,
           formData
@@ -77,6 +78,7 @@ const CreateUser = () => {
         setSnackbarMessage("User updated successfully!");
         setSnackbarSeverity("success");
       } else {
+        alert("createuser")
         await axios.post(`${baseURL}/api/users/createUser`, formData);
         setSnackbarMessage("User created successfully!");
         setSnackbarSeverity("success");
