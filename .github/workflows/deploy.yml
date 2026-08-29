@@ -1,6 +1,5 @@
 name: React CI/CD Pipeline
 
-# Triggers the pipeline strictly on pushes to the main branch
 on:
   push:
     branches:
@@ -11,30 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Pull your code from GitHub into the runner
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # Step 3: Install project dependencies
       - name: Install Dependencies
         run: npm ci
 
-      # Step 4: Build the production bundle
       - name: Build Project
         run: npm run build
 
-      # Step 5: Deploy the build folder to Netlify
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: './build' # Change to './dist' if you are using Vite
+          publish-dir: './build'
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Automated Deploy from GitHub Actions"
